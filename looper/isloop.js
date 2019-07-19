@@ -2,7 +2,18 @@
 
 //Complete this algo
 const isLoop = (linkedlist) => {
-
+    if (linkedlist.head === null) return false;
+    // debugger
+    let fast = linkedlist.head.next
+    let slow = linkedlist.head
+    while (slow !== null && fast !== null) {
+        if (slow.value === fast.value) {
+            return true;
+        }
+        fast = fast.next.next;
+        slow = slow.next;
+    }
+    return false;
 };
 
 
